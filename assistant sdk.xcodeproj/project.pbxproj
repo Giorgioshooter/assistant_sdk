@@ -10,6 +10,7 @@
 		4D0B60B926D8F2A10018BE9D /* assistant_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0B60AF26D8F2A10018BE9D /* assistant_sdk.framework */; };
 		4D0B60BE26D8F2A10018BE9D /* assistant_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B60BD26D8F2A10018BE9D /* assistant_sdkTests.swift */; };
 		4D0B60C026D8F2A10018BE9D /* assistant_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0B60B226D8F2A10018BE9D /* assistant_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D0B60CA26D8F2D50018BE9D /* ModCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B60C926D8F2D50018BE9D /* ModCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		4D0B60B826D8F2A10018BE9D /* assistant sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "assistant sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0B60BD26D8F2A10018BE9D /* assistant_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistant_sdkTests.swift; sourceTree = "<group>"; };
 		4D0B60BF26D8F2A10018BE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D0B60C926D8F2D50018BE9D /* ModCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				4D0B60B226D8F2A10018BE9D /* assistant_sdk.h */,
 				4D0B60B326D8F2A10018BE9D /* Info.plist */,
+				4D0B60C926D8F2D50018BE9D /* ModCalculator.swift */,
 			);
 			path = "assistant sdk";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					4D0B60AE26D8F2A10018BE9D = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					4D0B60B726D8F2A10018BE9D = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0B60CA26D8F2D50018BE9D /* ModCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		4D0B60C426D8F2A10018BE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DTHF7Q7ZY2;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.georgiosgalatoulas.assistant-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		4D0B60C526D8F2A10018BE9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DTHF7Q7ZY2;
@@ -389,6 +397,7 @@
 		4D0B60C726D8F2A10018BE9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DTHF7Q7ZY2;
 				INFOPLIST_FILE = "assistant sdkTests/Info.plist";
@@ -407,6 +416,7 @@
 		4D0B60C826D8F2A10018BE9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DTHF7Q7ZY2;
 				INFOPLIST_FILE = "assistant sdkTests/Info.plist";
