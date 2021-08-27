@@ -1,5 +1,12 @@
 name: create xcframework
 
+on: 
+ workflow_dispatch:
+    inputs:
+      version:
+        description: 'SDK Version'
+        required: true
+        default: '1.0.0'
 jobs:
   create:
     name: Creating xcframework
@@ -9,9 +16,9 @@ jobs:
       - name: Checkout
       - uses: actions/checkout@v2
       - name: Archive
-      - env: 
-         scheme: ${{ 'assistant sdk' }}
-         run: |
+        env: 
+          scheme: ${{ 'assistant sdk' }}
+        run: |
          xcodebuild archive -archivePath "assistant_sdk_ios.xcarchive" -configuration Release -sdk iphoneos SKIP_INSTALL=NO -scheme "$scheme"
          xcodebuild archive -archivePath "assistant_sdk_sim.xcarchive" -configuration Release -sdk iphonesimulator SKIP_INSTALL=NO -scheme "$scheme"
          xcodebuild -create-xcframework -framework "assistant_sdk_ios.xcarchive/Products/Library/Frameworks/assistant_sdk.framework" -framework "assistant_sdk_sim.xcarchive/Products/Library/Frameworks/assistant_sdk.framework"  -output "assistant_sdk.xcframework"
