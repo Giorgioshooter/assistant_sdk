@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Build and test assistant sdk
     runs-on: macos-latest
 
     steps:
@@ -19,10 +19,10 @@ jobs:
           scheme: ${{ 'assistant sdk' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
-          xcodebuild -scheme "$scheme" -sdk iphonesimulator
+          xcodebuild -scheme "$scheme" -destination "platform=$platform,OS=14.4,name=iPhone 11"
       - name: Test
         env:
           scheme: ${{ 'assistant sdk' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
-          xcodebuild test -scheme "$scheme" -destination "platform=$platform,OS=14.4,name=iPhone 11"
+          xcodebuild test-without-building -scheme "$scheme" -destination "platform=$platform,OS=14.4,name=iPhone 11"
