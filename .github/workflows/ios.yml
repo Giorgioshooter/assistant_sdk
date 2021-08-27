@@ -22,10 +22,10 @@ jobs:
           scheme: ${{ 'assistant sdk' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
-          xcodebuild -scheme "$scheme" -destination "platform=iOS Simulator,name=iPhone 11"
+          xcodebuild -scheme "$scheme" -sdk iphonesimulator
       - name: Test
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'iOS Simulator' }}
         run: |
-          xcodebuild test-without-building -scheme "$scheme" -destination "platform=iOS Simulator,name=iPhone 11"
+          xcodebuild test-without-building -scheme "$scheme" -destination "platform=iOS Simulator,OS=14.4,name=iPhone 11"
